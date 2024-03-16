@@ -1,4 +1,5 @@
 "use client";
+/* eslint react/no-unescaped-entities: 0 */
 import React from "react";
 import ServiceCard from "./ServiceCard";
 import CarouselButtons, { usePrevNextButtons } from "./CarouselButtons";
