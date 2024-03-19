@@ -68,7 +68,7 @@ const CTAForm = () => {
         </div>
         <div className="form mt-10 px-10">
           <form>
-            <div className="flex border-gray-200 border bg-white justify-center items-center gap-4 py-5 px-8 rounded-[50px]">
+            <div className="grid grid-cols-2 lg:flex border-gray-200 border bg-white justify-center items-center gap-4 py-5 px-8 rounded-[50px]">
               <TextInput
                 label={"Departure Date"}
                 name={"departureDate"}

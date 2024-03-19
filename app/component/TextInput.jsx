@@ -2,7 +2,7 @@ import React from "react";
 
 const TextInput = ({ label, register, name, placeholder, type = "text" }) => {
   return (
-    <div className="bg-white">
+    <div className="bg-transparent w-full">
       <label
         htmlFor="email"
         className="text-text_primary font-medium font-poppins text-sm"
@@ -13,7 +13,7 @@ const TextInput = ({ label, register, name, placeholder, type = "text" }) => {
         type={type}
         id={label}
         name={name}
-        className="w-full py-3 px-2 border-border_primary bg-transparent focus:outline-none focus:border-border_secondary border-b"
+        className="w-full bg-white py-3 px-2 border-border_primary  focus:outline-none focus:border-border_secondary border-b"
         placeholder={placeholder}
       />
     </div>

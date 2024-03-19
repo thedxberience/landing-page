@@ -7,14 +7,16 @@ import CarouselButtons from "./component/CarouselButtons";
 import MemoryContainer from "./component/MemoryContianer";
 import RatingsCard from "./component/RatingsCard";
 import ServicesCarousel from "./component/ServicesCarousel";
+import { redirect } from "next/navigation";
 
 export default function Home() {
+  redirect("/coming_soon", "replace");
   return (
     <main className="flex min-h-screen max-w-full flex-col items-center justify-between">
       <section className="hero-section w-full">
         <Navbar />
         <div className="flex mt-20 flex-col items-center justify-center gap-8">
-          <h1 className="text-5xl font-bold text-text_primary">
+          <h1 className="text-2xl lg:text-5xl font-bold text-text_primary">
             Hello there, How can we help you?
           </h1>
           <div className="flex flex-wrap justify-center items-center gap-8">

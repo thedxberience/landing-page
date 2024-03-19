@@ -9,7 +9,7 @@ const ReusableButton = ({
   return (
     <div>
       <button
-        className={`flex justify-center items-center gap-3 font-medium text-base rounded-3xl font-poppins p-3 pl-6 uppercase ${
+        className={`flex justify-center w-full items-center gap-3 font-medium text-base rounded-3xl font-poppins p-3 pl-6 uppercase ${
           filled
             ? "bg-primary text-text_primary_light"
             : ` ${background} text-text_primary border border-primary`

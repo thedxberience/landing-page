@@ -49,6 +49,10 @@ body {
   }
 }
 
+.coming_soon{
+  background: url("/coming_soon_bg.jpg") no-repeat center center/cover;
+}
+
 .CTAProfiles{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
