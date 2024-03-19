@@ -19,8 +19,32 @@
   }
 } */
 
+@font-face {
+  font-family: "SaolDisplay-Regular";
+  src: url("/fonts/SaolDisplay-Regular.ttf") format("ttf"),
+    url("/fonts/SaolDisplay-Regular.ttf") format("ttf");
+}
+
 .sacramento-regular {
   font-family: "Sacramento", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.react-tel-input{
+  font-family: "SaolDisplay-Regular", sans-serif !important;
+  height: 100% !important;
+}
+
+.react-tel-input .form-control, input{
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.saol-display-regular {
+  font-family: "SaolDisplay-Regular", sans-serif;
   font-weight: 400;
   font-style: normal;
 }

@@ -5,10 +5,13 @@ import ReusableButton from "../component/ReusableButton";
 import Navbar from "../component/Navbar";
 import Countdown from "../component/Countdown";
 import { useForm } from "react-hook-form";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const ComingSoon = () => {
   const [apiSuccess, setApiSuccess] = useState(false);
   const [apiLoading, setApiLoading] = useState(false);
+  const [phone, setPhone] = useState("");
   const {
     register,
     handleSubmit,
@@ -24,6 +27,7 @@ const ComingSoon = () => {
     };
     console.log(data);
     try {
+      data.phoneNumber = phone;
       const request = await fetch(url, headers, {
         method: "POST",
         body: JSON.stringify(data),
@@ -73,13 +77,39 @@ const ComingSoon = () => {
                 placeholder="Enter your name"
                 label={"Name"}
               />
-              <TextInput
-                register={register}
-                error={errors?.phoneNumber}
-                name={"phoneNumber"}
-                placeholder="Enter your number"
-                label={"Phone Number"}
-              />
+              <div className="phone flex flex-col justify-center items-start gap-2 w-full">
+                <label htmlFor="phone" className="text-xs text-accent-purple">
+                  Phone*
+                </label>
+                <div className="input  w-full saol-display-regular bg-white flex justify-start items-center">
+                  <PhoneInput
+                    enableSearch={true}
+                    inputStyle={{
+                      backgroundColor: "transparent",
+                      border: "none",
+                      color: "black",
+                    }}
+                    dropdownStyle={{ border: "none", color: "black" }}
+                    buttonStyle={{
+                      backgroundColor: "white",
+                      border: "none",
+                    }}
+                    buttonClass="hover:bg-transparent"
+                    country={"ae"}
+                    inputProps={{
+                      name: "phoneNumber",
+                      required: "Enter a number we can reach you on",
+                      className:
+                        "form-control w-full lg:w-[24.405vw] outline-none bg-transparent border-b px-0 text-black py-4 border-zinc-100",
+                    }}
+                    onChange={(phone) => {
+                      setPhone(phone);
+                    }}
+                    // {...register("contact.phone", { required: "Enter a number we can reach you on" })}
+                    placeholder="+___-___-____"
+                  />
+                </div>
+              </div>
             </div>
             <TextInput
               register={register}
