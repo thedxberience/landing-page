@@ -12,7 +12,7 @@ const saol = localFont({
 });
 
 export const metadata = {
-  title: "Dxberience | Home",
+  title: "Dxberience",
   description: "Luxury Concierge Services in Dubai",
 };
 

@@ -5,7 +5,7 @@ const Navbar = () => {
   const filled = true;
   return (
     <>
-      <nav className="flex justify-between items-center py-6 px-5 lg:px-20 w-full font-poppins">
+      <nav className="flex justify-between items-center py-6 px-2 lg:px-20 w-full font-poppins">
         <div className="logo relative w-[120px] lg:w-[24.467vw] h-10">
           <Image src="/dxberience_logo.svg" alt="logo" fill />
         </div>
@@ -26,7 +26,7 @@ const Navbar = () => {
           target="_blank"
         >
           <button
-            className={`flex justify-center w-full items-center gap-3 font-medium text-base rounded-3xl font-poppins p-3 pl-6 uppercase ${
+            className={`flex justify-center w-full items-center lg:gap-3 font-medium text-sm p-2 px-3 text-center lg:text-base rounded-3xl font-poppins lg:p-3 lg:pl-6 uppercase ${
               filled
                 ? "bg-primary text-text_primary_light"
                 : ` ${background} text-text_primary border border-primary`
@@ -36,7 +36,7 @@ const Navbar = () => {
             <span>
               <Image
                 src={`${"/buttonIcon.svg"}`}
-                className={`${"text-text_primary"} w-6 h-6`}
+                className={`${"text-text_primary"} hidden lg:flex w-6 h-6`}
                 alt="arrow"
                 width={24}
                 height={24}

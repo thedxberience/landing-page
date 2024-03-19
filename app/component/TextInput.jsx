@@ -1,6 +1,14 @@
 import React from "react";
 
-const TextInput = ({ label, register, name, placeholder, type = "text" }) => {
+const TextInput = ({
+  label,
+  register,
+  name,
+  placeholder,
+  error,
+  required = false,
+  type = "text",
+}) => {
   return (
     <div className="bg-transparent w-full">
       <label
@@ -13,9 +21,14 @@ const TextInput = ({ label, register, name, placeholder, type = "text" }) => {
         type={type}
         id={label}
         name={name}
+        {...register(name, { required })}
         className="w-full bg-white py-3 px-2 border-border_primary  focus:outline-none focus:border-border_secondary border-b"
         placeholder={placeholder}
+        aria-invalid={error ? "true" : "false"}
       />
+      {error && (
+        <p className="text-red-500 pt-2 text-xs">This field is required</p>
+      )}
     </div>
   );
 };
