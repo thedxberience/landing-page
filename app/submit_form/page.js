@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import Carousel from "../component/Carousel";
 import useEmblaCarousel from "embla-carousel-react";
 
-const page = () => {
+const Page = () => {
   const { selectedactivityList } = useStore((state) => state);
   const [emblaRef, emblaApi] = useEmblaCarousel({ dragFree: true });
 
@@ -89,4 +89,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
