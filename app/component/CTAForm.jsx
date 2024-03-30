@@ -1,110 +1,103 @@
+"use client";
 import React from "react";
 import CTAProfiles from "./CTAProfiles";
-import TextInput from "./TextInput";
-import ReusableButton from "./ReusableButton";
+import ServicesCarousel from "./ServicesCarousel";
+import { useStore } from "../store/store";
+import Carousel from "./Carousel";
+import { usePrevNextButtons } from "./CarouselButtons";
+import useEmblaCarousel from "embla-carousel-react";
+import CarouselButtons from "./CarouselButtons";
 
 const CTAForm = () => {
+  const { serviceType } = useStore((state) => state);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ dragFree: true });
+
+  const {
+    nextBtnDisabled,
+    prevBtnDisabled,
+    onNextButtonClick,
+    onPrevButtonClick,
+  } = usePrevNextButtons(emblaApi);
+
   const formDetails = [
     {
-      title: "Vacation",
+      title: "Luxury Travel Experiences",
       description: "Enjoy the best vacation destinations with your loved ones.",
       briefDescription: "Brief Description",
-      image: "/profile_1.jpg",
+      image: "/profile_1.png",
     },
     {
-      title: "Business Travel",
+      title: "Corperate Concierge",
       description: "Enjoy the best vacation destinations with your loved ones.",
       briefDescription: "Brief Description",
-      image: "/profile_2.jpg",
+      image: "/profile_2.png",
     },
     {
-      title: "Celebrity Events",
+      title: "Celebrity Concierge",
       description: "Enjoy the best vacation destinations with your loved ones.",
       briefDescription: "Brief Description",
-      image: "/profile_3.jpg",
+      image: "/profile_3.jpeg",
     },
     {
-      title: "High End Fashion Shows",
+      title: "Special Ocassions",
       description: "Enjoy the best vacation destinations with your loved ones.",
       briefDescription: "Brief Description",
-      image: "/profile_4.jpg",
+      image: "/profile_4.jpeg",
+    },
+  ];
+
+  const activityList = [
+    {
+      title: "Desert Activities",
+      description: "Enjoy the best vacation destinations with your loved ones.",
+      image: "/activity_1.png",
     },
     {
-      title: "VIP Events",
+      title: "Water Activites",
       description: "Enjoy the best vacation destinations with your loved ones.",
-      briefDescription: "Brief Description",
-      image: "/profile_5.jpg",
+      image: "/activity_2.jpeg",
     },
     {
-      title: "Private Luxury Experience",
+      title: "Luxury Car Rentals",
       description: "Enjoy the best vacation destinations with your loved ones.",
-      briefDescription: "Brief Description",
-      image: "/profile_6.jpg",
+      image: "/activity_3.jpeg",
     },
     {
-      title: "Luxury Health Travels",
+      title: "Night Life Experiences",
       description: "Enjoy the best vacation destinations with your loved ones.",
-      briefDescription: "Brief Description",
-      image: "/profile_7.jpg",
+      image: "/activity_4.jpeg",
     },
     {
-      title: "Luxury Adventure",
+      title: "Hotel/Villa Bookings",
       description: "Enjoy the best vacation destinations with your loved ones.",
-      briefDescription: "Brief Description",
-      image: "/profile_8.jpg",
+      image: "/activity_5.jpeg",
+    },
+    {
+      title: "Visa",
+      description: "Enjoy the best vacation destinations with your loved ones.",
+      image: "/activity_6.jpeg",
     },
   ];
 
   return (
-    <div className="px-20 w-full flex justify-center items-center mb-[89px]">
-      <div className="CTAProfile-container flex flex-col justify-center items-center mt-16 w-full bg-secondary py-6">
+    <div className="w-full flex justify-center items-center mb-[89px]">
+      <div className="CTAProfile-container flex flex-col justify-center items-center w-full py-6">
         <div className="CTAProfile-header">
-          <h1 className="text-3xl">What profile best suits you?</h1>
+          <h1 className="text-xl lg:text-3xl text-white">
+            The Ultimate Luxury Experience
+          </h1>
         </div>
-        <div className="CTAProfiles mt-10">
-          {formDetails.map((form, index) => (
-            <CTAProfiles key={index} {...form} />
-          ))}
+        <div className="CTAProfiles mt-10 relative">
+          <Carousel emblaRef={emblaRef}>
+            {formDetails.map((form, index) => (
+              <div className="embla__slide z-10" key={index}>
+                <CTAProfiles key={index} {...form} index={index} />
+              </div>
+            ))}
+          </Carousel>
         </div>
-        <div className="form mt-10 px-10">
-          <form>
-            <div className="grid grid-cols-2 lg:flex border-gray-200 border bg-white justify-center items-center gap-4 py-5 px-8 rounded-[50px]">
-              <TextInput
-                label={"Departure Date"}
-                name={"departureDate"}
-                placeholder={"Pick Date"}
-                type="date"
-              />
-              <TextInput
-                label={"Return Date"}
-                name={"returnDate"}
-                placeholder={"Pick Date"}
-                type="date"
-              />
-              <TextInput
-                label={"Number of Travellers"}
-                name={"numberOfTravellers"}
-                placeholder={"Enter"}
-              />
-              <TextInput
-                label={"Arriving From?"}
-                name={"arrivingFrom"}
-                placeholder={"Enter"}
-              />
-              <TextInput
-                label={"Minimum Budget"}
-                name={"minimumBudget"}
-                placeholder={"Select Amount"}
-              />
-              <TextInput
-                label={"Maximum Budget"}
-                name={"maximumBudget"}
-                placeholder={"Select Amount"}
-              />
-              <ReusableButton btnText={"GO"} filled={true} />
-            </div>
-          </form>
-        </div>
+        {serviceType && <ServicesCarousel carouselList={activityList} />}
       </div>
     </div>
   );

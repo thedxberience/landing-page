@@ -22,7 +22,7 @@ const TextInput = ({
         id={label}
         name={name}
         {...register(name, { required })}
-        className="w-full bg-white py-3 px-2 border-border_primary  focus:outline-none focus:border-border_secondary border-b"
+        className="w-full bg-white py-1 px-2 border-border_primary  focus:outline-none focus:border-border_secondary border-b"
         placeholder={placeholder}
         aria-invalid={error ? "true" : "false"}
       />
