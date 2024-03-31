@@ -58,7 +58,7 @@ const ServiceCard = ({
     >
       <div
         onClick={handleSelectActivity}
-        className="service-container w-[200px] h-[250px] md:w-[240px] lg:w-[16.667svw] md:h-[300px] lg:h-[34.833svh] flex justify-center items-center p-[11.79px] transition-all ease-in-out duration-300 cursor-pointer"
+        className="service-container w-[200px] h-[250px] md:w-[240px] lg:w-[240px] xl:w-[16.667vw] md:h-[300px] lg:h-[34.833svh] flex justify-center items-center p-[11.79px] transition-all ease-in-out duration-300 cursor-pointer"
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(200, 200, 200, 0.1), rgba(0, 0, 0, 0.9)), url(${background})`,
           backgroundSize: `cover`,

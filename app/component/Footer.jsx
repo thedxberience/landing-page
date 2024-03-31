@@ -4,7 +4,7 @@ import BrandLogo from "./BrandLogo";
 
 const Footer = () => {
   return (
-    <footer className="w-full flex flex-col gap-8 justify-center items-center bg-primary">
+    <footer className="w-full flex flex-col gap-4 lg:gap-6 justify-center items-center bg-primary">
       <BrandLogo />
       <div className="footer-items w-full flex justify-between items-center">
         <div className="w-full">
@@ -13,7 +13,7 @@ const Footer = () => {
           </h1>
         </div>
       </div>
-      <div className="contact-details flex justify-evenly border-white border-y py-8 items-center w-full">
+      <div className="contact-details flex justify-evenly border-white border-y py-4 lg:py-6 items-center w-full">
         <div className="flex flex-col w-6/12 gap-5 justify-center items-center">
           <h1 className="font-medium text-text_primary_light">CALL US</h1>
           <p className="text-text_primary_light text-lg  lg:text-4xl font-medium">
@@ -22,7 +22,7 @@ const Footer = () => {
             </a>
           </p>
         </div>
-        <div className="h-[152.01px] w-0 border border-white lg:rotate-0"></div>
+        <div className="h-[100.01px] w-0 border border-white lg:rotate-0"></div>
         <div className="flex flex-col w-6/12 gap-5 justify-center items-center">
           <h1 className="font-medium text-text_primary_light">EMAIL US</h1>
           <p className="text-text_primary_light text-lg lg:text-4xl font-medium">
