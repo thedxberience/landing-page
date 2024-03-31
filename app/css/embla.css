@@ -23,9 +23,9 @@
   flex: 0 0 var(--slide-size); 
 }
 
-.CTAProfiles .embla .embla__container{
+/* .CTAProfiles .embla .embla__container{
   width: 100%;
-}
+} */
 
 .embla__viewport {
   overflow: hidden;
@@ -164,7 +164,7 @@
   }
 }
 
-@media (min-width: 420px) and (max-width: 1023px){
+@media (min-width: 768px) and (max-width: 1023px){
   .CTAProfiles .embla .embla__container{
     justify-content: space-evenly;
   }
