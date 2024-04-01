@@ -39,7 +39,7 @@
   /* margin-left: calc(var(--slide-spacing) * -1); */
 }
 
-.services-container .embla .embla__container{
+.single .embla .embla__container{
   justify-content: center;
 }
 

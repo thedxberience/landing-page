@@ -28,7 +28,11 @@ const ServicesCarousel = ({ carouselList }) => {
 
   return (
     <section className="services flex flex-col justify-center items-center mt-24 w-full">
-      <div className="services-container flex h-fit justify-center relative items-center gap-8 mt-8 w-full">
+      <div
+        className={`${
+          carouselList.length == 1 && "single"
+        } services-container flex h-fit justify-center relative items-center gap-8 mt-8 w-full`}
+      >
         <Carousel emblaRef={emblaRef}>
           {carouselList.map((activity, index) => {
             return (
