@@ -40,7 +40,11 @@
 }
 
 .services-container .embla .embla__container{
-  width: calc(100svw - calc(var(--slide-spacing) * -1) - 8px);
+  justify-content: center;
+}
+
+.selected-activities .embla .embla__container{
+  justify-content: center;
 }
 
 .embla__slide {

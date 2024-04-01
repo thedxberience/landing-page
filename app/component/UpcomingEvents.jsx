@@ -37,7 +37,7 @@ const UpcomingEvents = () => {
           />
         </div>
       </div>
-      <div className="flex justify-center items-center w-full my-6 gap-2">
+      {/* <div className="flex justify-center items-center w-full my-6 gap-2">
         <Carousel emblaRef={emblaRef}>
           <div className="embla__slide z-10" key={1}>
             <MemoryContainer star={4} />
@@ -58,6 +58,11 @@ const UpcomingEvents = () => {
             <MemoryContainer star={3} />
           </div>
         </Carousel>
+      </div> */}
+      <div className="flex h-60 justify-center items-center">
+        <h2 className="text-xl lg:text-4xl">
+          No upcoming events, check back later
+        </h2>
       </div>
     </section>
   );

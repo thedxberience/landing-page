@@ -2,23 +2,26 @@
 import React from "react";
 import CTAProfiles from "./CTAProfiles";
 import ServicesCarousel from "./ServicesCarousel";
-import { useStore } from "../store/store";
+import { useStore, useAPIStore } from "../store/store";
 import Carousel from "./Carousel";
-import { usePrevNextButtons } from "./CarouselButtons";
 import useEmblaCarousel from "embla-carousel-react";
-import CarouselButtons from "./CarouselButtons";
+import { useQuery } from "react-query";
+import { Skeleton } from "@chakra-ui/react";
 
 const CTAForm = () => {
-  const { serviceType } = useStore((state) => state);
+  const { serviceType, activityList } = useStore((state) => state);
+
+  const { getProfiles } = useAPIStore((store) => store);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ dragFree: true });
 
-  const {
-    nextBtnDisabled,
-    prevBtnDisabled,
-    onNextButtonClick,
-    onPrevButtonClick,
-  } = usePrevNextButtons(emblaApi);
+  const { isPending, isLoading, isError, data, error } = useQuery({
+    queryKey: "getProfiles",
+    queryFn: async () => {
+      const request = await getProfiles();
+      return request?.data;
+    },
+  });
 
   const formDetails = [
     {
@@ -47,39 +50,6 @@ const CTAForm = () => {
     },
   ];
 
-  const activityList = [
-    {
-      title: "Desert Activities",
-      description: "Enjoy the best vacation destinations with your loved ones.",
-      image: "/activity_1.png",
-    },
-    {
-      title: "Water Activites",
-      description: "Enjoy the best vacation destinations with your loved ones.",
-      image: "/activity_2.jpeg",
-    },
-    {
-      title: "Luxury Car Rentals",
-      description: "Enjoy the best vacation destinations with your loved ones.",
-      image: "/activity_3.jpeg",
-    },
-    {
-      title: "Night Life Experiences",
-      description: "Enjoy the best vacation destinations with your loved ones.",
-      image: "/activity_4.jpeg",
-    },
-    {
-      title: "Hotel/Villa Bookings",
-      description: "Enjoy the best vacation destinations with your loved ones.",
-      image: "/activity_5.jpeg",
-    },
-    {
-      title: "Visa",
-      description: "Enjoy the best vacation destinations with your loved ones.",
-      image: "/activity_6.jpeg",
-    },
-  ];
-
   return (
     <div className="w-full flex justify-center items-center mb-[89px]">
       <div className="CTAProfile-container flex flex-col justify-center items-center w-full py-6">
@@ -90,14 +60,24 @@ const CTAForm = () => {
         </div>
         <div className="CTAProfiles mt-10 relative">
           <Carousel emblaRef={emblaRef}>
-            {formDetails.map((form, index) => (
+            {data?.map((form, index) => (
               <div className="embla__slide z-10" key={index}>
-                <CTAProfiles key={index} {...form} index={index} />
+                <Skeleton
+                  startColor="#FFE3C2"
+                  endColor="#4d4843"
+                  isLoaded={!isLoading}
+                  width={["200px", "350px"]}
+                >
+                  <CTAProfiles key={index} {...form} index={index} />
+                </Skeleton>
               </div>
             ))}
           </Carousel>
         </div>
-        {serviceType && <ServicesCarousel carouselList={activityList} />}
+
+        {activityList.length > 0 && (
+          <ServicesCarousel carouselList={activityList} />
+        )}
       </div>
     </div>
   );

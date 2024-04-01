@@ -5,16 +5,20 @@ import { useStore } from "../store/store";
 
 const CTAProfiles = ({
   index,
-  title,
+  name,
   description,
   image,
+  activities,
   briefDescription,
 }) => {
-  const { serviceType, setServiceType } = useStore((state) => state);
+  const { serviceType, setServiceType, setActivityList } = useStore(
+    (state) => state
+  );
   const [profile, setProfile] = React.useState(false);
 
   const handleSelectService = () => {
-    setServiceType(title);
+    setServiceType(name);
+    setActivityList(activities);
   };
   return (
     <div
@@ -27,7 +31,7 @@ const CTAProfiles = ({
         animationDelay: `${index * 100}ms`,
       }}
       className={`"CTACard flex flex-col gap-3 p-4 lg:p-8 text-white justify-end items-start w-full h-[204px] lg:h-[50.239svh] hover:border hover:border-white hover:shadow-lg transition-all duration-100 ease-in cursor-pointer" ${
-        serviceType == title ? "border border-white shadow-lg" : ""
+        serviceType == name ? "border border-white shadow-lg" : ""
       }`}
     >
       {/* <div className="profile-image relative w-full h-[48.165vh]">
@@ -42,8 +46,8 @@ const CTAProfiles = ({
       </div> */}
       <div className="profile-details flex flex-col items-start gap-2 w-full">
         <div className="flex justify-between items-center w-full">
-          <h1 className="text-sm lg:text-xl font-bold">{title}</h1>
-          {serviceType == title ? (
+          <h1 className="text-sm lg:text-xl font-bold">{name}</h1>
+          {serviceType == name ? (
             <Image
               src="/heart_bold.svg"
               alt="heart selected"

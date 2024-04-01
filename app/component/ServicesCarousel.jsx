@@ -35,9 +35,10 @@ const ServicesCarousel = ({ carouselList }) => {
               <div className="embla__slide z-10" key={index}>
                 <ServiceCard
                   index={index}
-                  background={activity.image}
+                  background={activity.coverImage}
                   description={activity.description}
-                  serviceTitle={activity.title}
+                  serviceTitle={activity.name}
+                  video={activity.video}
                 />
               </div>
             );

@@ -1,15 +1,18 @@
 "use client";
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import ReusableButton from "./ReusableButton";
 import Image from "next/image";
 import { useStore } from "../store/store";
 import { motion } from "framer-motion";
+import CustomModal from "./CustomModal";
+import ReactPlayer from "react-player/lazy";
 
 const ServiceCard = ({
   index,
   background,
   description,
-  serviceTitle = "Service Package",
+  video,
+  serviceTitle,
 }) => {
   const {
     interestedActivities,
@@ -17,13 +20,15 @@ const ServiceCard = ({
     removeInterestedActivity,
   } = useStore((state) => state);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleCheckSelected = useCallback(() => {
     return interestedActivities.includes(serviceTitle);
   }, [interestedActivities]);
 
   const handleSelectActivity = () => {
     const selectedActivity = {
-      title: serviceTitle,
+      name: serviceTitle,
       description: description,
       image: background,
     };
@@ -39,6 +44,21 @@ const ServiceCard = ({
       interestedActivities,
       interestedActivities.includes(serviceTitle)
     );
+  };
+
+  const handleServiceTitle = () => {
+    let word_split = serviceTitle.split(" ");
+    let first_word = word_split[0];
+    let second_word = word_split[1];
+
+    first_word = first_word.charAt(0).toUpperCase() + first_word.slice(1);
+
+    if (second_word) {
+      second_word = second_word.charAt(0).toUpperCase() + second_word.slice(1);
+      return `${first_word} ${second_word}`;
+    }
+
+    return first_word;
   };
 
   return (
@@ -85,16 +105,38 @@ const ServiceCard = ({
             )}
           </div>
           <h2 className="text-text_primary_light text-center text-xl">
-            {serviceTitle}
+            {handleServiceTitle()}
           </h2>
           <p className="service-caption transition-transform text-text_primary_light text-center max-w-full p-3">
             {description}
           </p>
-          <button>
-            <Image src="/watch_button.svg" alt="arrow" width={40} height={40} />
-          </button>
+          {video && (
+            <button onClick={() => setIsModalOpen(true)}>
+              <Image
+                src="/watch_button.svg"
+                alt="arrow"
+                width={40}
+                height={40}
+                className="cursor-pointer"
+              />
+            </button>
+          )}
         </div>
       </div>
+      <CustomModal
+        modalHeader={handleServiceTitle()}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      >
+        <ReactPlayer
+          width={"100%"}
+          height={"100%"}
+          url={video}
+          controls={true}
+          muted={true}
+          playing={true}
+        />
+      </CustomModal>
     </motion.div>
   );
 };

@@ -1,14 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import ReusableButton from "./ReusableButton";
-const Navbar = () => {
+import BrandLogo from "./BrandLogo";
+const Navbar = ({ logoColor = "light" }) => {
   const filled = false;
   return (
     <>
       <nav className="flex justify-center items-center py-6 px-2 lg:px-20 w-full font-poppins">
-        <div className="logo relative w-[120px] lg:w-[22.569vw] h-10">
-          <Image src="/dxberience_logo.svg" alt="logo" fill />
-        </div>
+        <BrandLogo logoType={logoColor} />
         {/* <div className="flex items-center space-x-4">
           <ul className="flex justify-center items-center gap-8">
             <li className="text-text_primary font-medium text-base">
