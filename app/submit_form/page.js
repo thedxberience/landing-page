@@ -57,12 +57,15 @@ const Page = () => {
       ...data,
       phoneNumber: phone,
       profile: serviceType,
-      activities: interestedActivities,
+      activities: interestedActivities.toString(),
     };
 
     try {
       console.log(apiData);
       await mutateAsync(apiData);
+      if (isSuccess) {
+        router.push("/success");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -100,6 +103,7 @@ const Page = () => {
             </span>
           </p>
         </div>
+        {error && <p className="text-red-500 text-sm">{error.message}</p>}
         <form className="" onSubmit={handleSubmit(handleSubmitForm)}>
           <div className="grid w-[70vw] gap-6  grid-cols-1 lg:grid-cols-2 mb-10">
             <TextInput
