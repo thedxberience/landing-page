@@ -63,9 +63,7 @@ const Page = () => {
     try {
       console.log(apiData);
       await mutateAsync(apiData);
-      if (isSuccess) {
-        router.push("/success");
-      }
+      router.push("/submit_form/success");
     } catch (error) {
       console.log(error);
     }

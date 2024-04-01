@@ -23,33 +23,6 @@ const CTAForm = () => {
     },
   });
 
-  const formDetails = [
-    {
-      title: "Luxury Travel Experiences",
-      description: "Enjoy the best vacation destinations with your loved ones.",
-      briefDescription: "Brief Description",
-      image: "/profile_1.png",
-    },
-    {
-      title: "Corperate Concierge",
-      description: "Enjoy the best vacation destinations with your loved ones.",
-      briefDescription: "Brief Description",
-      image: "/profile_2.png",
-    },
-    {
-      title: "Celebrity Concierge",
-      description: "Enjoy the best vacation destinations with your loved ones.",
-      briefDescription: "Brief Description",
-      image: "/profile_3.jpeg",
-    },
-    {
-      title: "Special Ocassions",
-      description: "Enjoy the best vacation destinations with your loved ones.",
-      briefDescription: "Brief Description",
-      image: "/profile_4.jpeg",
-    },
-  ];
-
   return (
     <div className="w-full flex justify-center items-center mb-[89px]">
       <div className="CTAProfile-container flex flex-col justify-center items-center w-full py-6">

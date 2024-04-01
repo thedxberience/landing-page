@@ -32,7 +32,7 @@ export const useStore = create(
           (act) => act !== activity
         );
         const activityList = get().selectedactivityList.filter(
-          (act) => act.title !== activity
+          (act) => act.name !== activity
         );
         set({
           interestedActivities: activities,
