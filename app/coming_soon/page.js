@@ -25,7 +25,7 @@ const ComingSoon = () => {
     const headers = {
       "Content-Type": "application/json",
     };
-    console.log(data);
+    // console.log(data);
     try {
       data.phoneNumber = phone;
       const request = await fetch(url, headers, {
@@ -37,7 +37,7 @@ const ComingSoon = () => {
       setApiLoading(false);
     } catch (error) {
       setApiSuccess(false);
-      console.log(error);
+      // console.log(error);
       setApiLoading(false);
     }
   };

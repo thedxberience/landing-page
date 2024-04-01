@@ -45,7 +45,7 @@ const Page = () => {
     if (selectedactivityList.length === 0) {
       router.push("/");
     }
-    console.log("redirecting to home");
+    // console.log("redirecting to home");
   }, [selectedactivityList]);
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const Page = () => {
     };
 
     try {
-      console.log(apiData);
+      // console.log(apiData);
       await mutateAsync(apiData);
       router.push("/submit_form/success");
     } catch (error) {
@@ -127,7 +127,7 @@ const Page = () => {
             />
             <CustomPhoneInput setPhone={setPhone} />
           </div>
-          <div className="flex justify-center items-center w-full">
+          <div className="flex justify-center items-center w-full mb-10">
             <div className="w-fit">
               <ReusableButton btnText={"Complete Registration"} />
             </div>

@@ -67,7 +67,7 @@ export const useAPIStore = create(
           let request = await api.post("/leads", leadDetails);
           return request?.data;
         } catch (error) {
-          console.log(error);
+          // console.log(error);
           throw new Error(
             `Failed to submit lead: ${error.response.data.message}`
           );
@@ -79,7 +79,7 @@ export const useAPIStore = create(
           let request = await api.get("/profile");
           return request?.data;
         } catch (error) {
-          console.log(error);
+          // console.log(error);
           throw new Error(
             `Failed to get profiles: ${error.response.data.message}`
           );

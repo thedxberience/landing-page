@@ -33,17 +33,17 @@ const ServiceCard = ({
       image: background,
     };
     if (!handleCheckSelected()) {
-      console.log("Adding activity", selectedActivity);
+      // console.log("Adding activity", selectedActivity);
       addInterestedActivity(serviceTitle, selectedActivity);
     } else {
-      console.log("Removing activity");
+      // console.log("Removing activity");
       removeInterestedActivity(serviceTitle);
     }
     // setSelected(handleCheckSelected());
-    console.log(
-      interestedActivities,
-      interestedActivities.includes(serviceTitle)
-    );
+    // console.log(
+    //   interestedActivities,
+    //   interestedActivities.includes(serviceTitle)
+    // );
   };
 
   const handleServiceTitle = () => {
@@ -53,12 +53,12 @@ const ServiceCard = ({
 
     first_word = first_word.charAt(0).toUpperCase() + first_word.slice(1);
 
-    if (second_word) {
-      second_word = second_word.charAt(0).toUpperCase() + second_word.slice(1);
-      return `${first_word} ${second_word}`;
-    }
+    let title = "";
+    word_split.forEach((word) => {
+      title += `${word.charAt(0).toUpperCase() + word.slice(1)} `;
+    });
 
-    return first_word;
+    return title;
   };
 
   return (
