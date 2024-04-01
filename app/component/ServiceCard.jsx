@@ -39,19 +39,10 @@ const ServiceCard = ({
       // console.log("Removing activity");
       removeInterestedActivity(serviceTitle);
     }
-    // setSelected(handleCheckSelected());
-    // console.log(
-    //   interestedActivities,
-    //   interestedActivities.includes(serviceTitle)
-    // );
   };
 
   const handleServiceTitle = () => {
     let word_split = serviceTitle.split(" ");
-    let first_word = word_split[0];
-    let second_word = word_split[1];
-
-    first_word = first_word.charAt(0).toUpperCase() + first_word.slice(1);
 
     let title = "";
     word_split.forEach((word) => {

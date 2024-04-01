@@ -20,6 +20,17 @@ const CTAProfiles = ({
     setServiceType(name);
     setActivityList(activities);
   };
+
+  const handleServiceTitle = () => {
+    let word_split = name.split(" ");
+
+    let title = "";
+    word_split.forEach((word) => {
+      title += `${word.charAt(0).toUpperCase() + word.slice(1)} `;
+    });
+
+    return title;
+  };
   return (
     <div
       onClick={handleSelectService}
@@ -46,7 +57,9 @@ const CTAProfiles = ({
       </div> */}
       <div className="profile-details flex flex-col items-start gap-2 w-full">
         <div className="flex justify-between items-center w-full">
-          <h1 className="text-sm lg:text-xl font-bold">{name}</h1>
+          <h1 className="text-sm lg:text-xl font-bold">
+            {handleServiceTitle()}
+          </h1>
           {serviceType == name ? (
             <Image
               src="/heart_bold.svg"
