@@ -9,7 +9,7 @@ const StarRatings = ({ star }) => {
         .map((_, i) =>
           i < star ? (
             <Image
-              src="/star-filled.svg"
+              src="/star_filled.svg"
               alt="star"
               width={24}
               height={24}

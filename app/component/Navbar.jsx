@@ -1,14 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import ReusableButton from "./ReusableButton";
-const Navbar = () => {
-  const filled = true;
+import BrandLogo from "./BrandLogo";
+const Navbar = ({ logoColor = "light" }) => {
+  const filled = false;
   return (
     <>
-      <nav className="flex justify-between items-center py-6 px-2 lg:px-20 w-full font-poppins">
-        <div className="logo relative w-[120px] lg:w-[24.467vw] h-10">
-          <Image src="/dxberience_logo.svg" alt="logo" fill />
-        </div>
+      <nav className="flex justify-center items-center py-6 px-2 lg:px-20 w-full font-poppins">
+        <BrandLogo logoType={logoColor} />
         {/* <div className="flex items-center space-x-4">
           <ul className="flex justify-center items-center gap-8">
             <li className="text-text_primary font-medium text-base">
@@ -21,7 +20,7 @@ const Navbar = () => {
           </ul>
         </div> */}
         {/* <ReusableButton btnText={"Contact Us"} /> */}
-        <a
+        {/* <a
           href="https://api.whatsapp.com/send/?phone=%2B971585023479&text=Hello+there%2C+I+am+interested+in+a+luxury+concierge+service+in+Dubai&type=phone_number&app_absent=0"
           target="_blank"
         >
@@ -29,7 +28,7 @@ const Navbar = () => {
             className={`flex justify-center w-full items-center lg:gap-3 font-medium text-sm p-2 px-3 text-center lg:text-base rounded-3xl font-poppins lg:p-3 lg:pl-6 uppercase ${
               filled
                 ? "bg-primary text-text_primary_light"
-                : ` ${background} text-text_primary border border-primary`
+                : ` bg-white text-text_primary border border-primary`
             }`}
           >
             Contact Us
@@ -43,7 +42,7 @@ const Navbar = () => {
               />
             </span>
           </button>
-        </a>
+        </a> */}
       </nav>
       {/* <nav className="flex lg:hidden flex-col justify-between items-center py-6 px-20 w-full font-poppins">
         <div className="flex w-full justify-between items-center">

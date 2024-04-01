@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "./css/base.css";
 import "./css/embla.css";
+import Provider from "./component/Provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${saol.className}`}>{children}</body>
+      <body className={`${inter.className} ${saol.className}`}>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }
