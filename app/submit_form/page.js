@@ -75,7 +75,11 @@ const Page = () => {
       <div className="flex pb-4 flex-col items-center justify-center gap-8">
         <div className="selected-activities flex flex-col justify-start items-center">
           <h2 className="text-xl lg:text-3xl pb-2">Activities you selected</h2>
-          <div className="services-container flex h-fit justify-center relative items-center gap-8 mt-8 w-full">
+          <div
+            className={`${
+              selectedactivityList.length < 2 && "single"
+            } services-container flex h-fit justify-center relative items-center gap-8 mt-8 w-full`}
+          >
             <Carousel emblaRef={emblaRef}>
               {selectedactivityList.map((activity, index) => {
                 return (

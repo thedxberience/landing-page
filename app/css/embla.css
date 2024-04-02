@@ -199,4 +199,8 @@
     --slide-size: 16.667vw;
     flex: 0 0 var(--slide-size); 
   }
+
+  .services-container .embla .embla__container{
+    justify-content: center;
+  }
 }
