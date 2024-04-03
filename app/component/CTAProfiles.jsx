@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { useStore } from "../store/store";
+import { Skeleton } from "@chakra-ui/react";
 
 const CTAProfiles = ({
   index,
@@ -14,7 +15,8 @@ const CTAProfiles = ({
   const { serviceType, setServiceType, setActivityList } = useStore(
     (state) => state
   );
-  const [profile, setProfile] = React.useState(false);
+
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleSelectService = () => {
     setServiceType(name);
@@ -32,58 +34,69 @@ const CTAProfiles = ({
     return title;
   };
   return (
-    <div
-      onClick={handleSelectService}
-      style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(168, 168, 168, 0), rgba(0, 0, 0, 0.8)), url(${image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        animationDelay: `${index * 100}ms`,
-      }}
-      className={`"CTACard flex flex-col gap-3 p-4 lg:p-8 text-white justify-end items-start w-full h-[204px] lg:h-[50.239svh] hover:border hover:border-white hover:shadow-lg transition-all duration-100 ease-in cursor-pointer" ${
-        serviceType == name ? "border border-white shadow-lg" : ""
-      }`}
+    <Skeleton
+      startColor="#FFE3C2"
+      endColor="#4d4843"
+      isLoaded={imageLoaded}
+      width={["200px", "350px"]}
     >
-      {/* <div className="profile-image relative w-full h-[48.165vh]">
-        {image && (
-          <Image
-            src={image}
-            alt={title}
-            className="object-cover object-center"
-            fill
-          />
-        )}
-      </div> */}
-      <div className="profile-details flex flex-col items-start gap-2 w-full">
-        <div className="flex justify-between items-center w-full">
-          <h1 className="text-sm lg:text-xl font-bold">
-            {handleServiceTitle()}
-          </h1>
-          {serviceType == name ? (
-            <Image
-              src="/heart_bold.svg"
-              alt="heart selected"
-              width={24}
-              height={24}
-              onClick={handleSelectService}
-            />
-          ) : (
-            <Image
-              src="/heart.svg"
-              alt="heart"
-              width={24}
-              height={24}
-              onClick={handleSelectService}
-            />
-          )}
+      <div
+        onClick={handleSelectService}
+        style={{
+          // backgroundImage: `linear-gradient(to bottom, rgba(168, 168, 168, 0), rgba(0, 0, 0, 0.8)), url(${image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+        className={`"CTACard flex flex-col gap-3 p-4 lg:p-8 text-white justify-end relative items-start w-full h-[204px] lg:h-[50.239svh] hover:border hover:border-white hover:shadow-lg transition-all duration-100 ease-in cursor-pointer" ${
+          serviceType == name ? "border border-white shadow-lg" : ""
+        }`}
+      >
+        <Image
+          src={image && image}
+          alt={name}
+          width={350}
+          height={486}
+          loading="lazy"
+          onLoad={() => setImageLoaded(true)}
+          className="object-cover w-full h-[204px] lg:h-[50.239svh] absolute top-0 left-0"
+        />
+        <div
+          style={{
+            backgroundImage: `linear-gradient(180deg, rgba(200, 200, 200, 0.1), rgba(0, 0, 0, 0.9))`,
+          }}
+          className="w-full h-[204px] lg:h-[50.239svh] absolute top-0 left-0 z-10"
+        ></div>
+        <div className="profile-details z-50 flex flex-col items-start gap-2 w-full">
+          <div className="flex justify-between items-center w-full">
+            <h1 className="text-sm lg:text-xl font-bold">
+              {handleServiceTitle()}
+            </h1>
+            {serviceType == name ? (
+              <Image
+                src="/heart_bold.svg"
+                alt="heart selected"
+                width={24}
+                height={24}
+                onClick={handleSelectService}
+              />
+            ) : (
+              <Image
+                src="/heart.svg"
+                alt="heart"
+                width={24}
+                height={24}
+                onClick={handleSelectService}
+              />
+            )}
+          </div>
+          <p className="text-sm font-light font-poppins hidden lg:flex">
+            {description}
+          </p>
+          {/* <p className="text-sm font-poppins uppercase">{briefDescription}</p> */}
         </div>
-        <p className="text-sm font-light font-poppins hidden lg:flex">
-          {description}
-        </p>
-        {/* <p className="text-sm font-poppins uppercase">{briefDescription}</p> */}
       </div>
-    </div>
+    </Skeleton>
   );
 };
 

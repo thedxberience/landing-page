@@ -82,6 +82,10 @@ body {
   }
 }
 
+.service-video video{
+  max-height: 400px;
+}
+
 .hero-section {
   /* background: url("/hero_gif.gif") no-repeat center center/cover; */
   background-color: #4d4843;
