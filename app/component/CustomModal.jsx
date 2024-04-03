@@ -17,10 +17,10 @@ const CustomModal = ({
   bgTransparent = false,
 }) => {
   return (
-    <Modal size={["sm", "md", "lg", "xl"]} isOpen={isOpen} onClose={onClose}>
+    <Modal size={["sm"]} isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>{modalHeader}</ModalHeader>
+      <ModalContent w={"fit-content"}>
+        <ModalHeader pr={"40px"}>{modalHeader}</ModalHeader>
         <ModalCloseButton />
         <ModalBody bg={bgTransparent && "transparent"} mb={"20px"}>
           {children}

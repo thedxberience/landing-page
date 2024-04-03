@@ -35,14 +35,7 @@ const CTAForm = () => {
           <Carousel emblaRef={emblaRef}>
             {data?.map((form, index) => (
               <div className="embla__slide z-10" key={index}>
-                <Skeleton
-                  startColor="#FFE3C2"
-                  endColor="#4d4843"
-                  isLoaded={!isLoading}
-                  width={["200px", "350px"]}
-                >
-                  <CTAProfiles key={index} {...form} index={index} />
-                </Skeleton>
+                <CTAProfiles key={index} {...form} index={index} />
               </div>
             ))}
           </Carousel>
