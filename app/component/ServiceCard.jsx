@@ -70,7 +70,7 @@ const ServiceCard = ({
         delay: index * 0.1,
       }}
     >
-      <Skeleton isLoaded={imageLoaded}>
+      <Skeleton startColor="#927E68" endColor="#4d4843" isLoaded={imageLoaded}>
         <div
           onClick={handleSelectActivity}
           className="service-container relative w-[200px] h-[280px] md:w-[240px] lg:w-[240px] xl:w-[16.667vw] md:h-[300px] lg:h-[34.833svh] flex justify-center items-center p-[11.79px] transition-all ease-in-out duration-300 cursor-pointer"
