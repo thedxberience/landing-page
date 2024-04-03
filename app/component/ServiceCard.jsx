@@ -73,7 +73,7 @@ const ServiceCard = ({
       <Skeleton isLoaded={imageLoaded}>
         <div
           onClick={handleSelectActivity}
-          className="service-container relative w-[200px] h-[250px] md:w-[240px] lg:w-[240px] xl:w-[16.667vw] md:h-[300px] lg:h-[34.833svh] flex justify-center items-center p-[11.79px] transition-all ease-in-out duration-300 cursor-pointer"
+          className="service-container relative w-[200px] h-[280px] md:w-[240px] lg:w-[240px] xl:w-[16.667vw] md:h-[300px] lg:h-[34.833svh] flex justify-center items-center p-[11.79px] transition-all ease-in-out duration-300 cursor-pointer"
           style={{
             // backgroundImage: `linear-gradient(180deg, rgba(200, 200, 200, 0.1), rgba(0, 0, 0, 0.9)), url(${background})`,
             backgroundSize: `cover`,
@@ -85,16 +85,16 @@ const ServiceCard = ({
             src={background && background}
             alt={serviceTitle}
             width={200}
-            height={250}
+            height={280}
             loading="lazy"
             onLoad={() => setImageLoaded(true)}
-            className="w-[200px] h-[250px] object-cover md:w-[240px] lg:w-[240px] xl:w-[16.667vw] md:h-[300px] lg:h-[34.833svh] absolute top-0 left-0"
+            className="w-[200px] h-[280px] object-cover md:w-[240px] lg:w-[240px] xl:w-[16.667vw] md:h-[300px] lg:h-[34.833svh] absolute top-0 left-0"
           />
           <div
             style={{
               backgroundImage: `linear-gradient(180deg, rgba(200, 200, 200, 0.1), rgba(0, 0, 0, 0.9))`,
             }}
-            className="w-[200px] h-[250px] object-cover md:w-[240px] lg:w-[240px] xl:w-[16.667vw] md:h-[300px] lg:h-[34.833svh] absolute top-0 left-0 z-10"
+            className="w-[200px] h-[280px] object-cover md:w-[240px] lg:w-[240px] xl:w-[16.667vw] md:h-[300px] lg:h-[34.833svh] absolute top-0 left-0 z-10"
           ></div>
           <div
             className={`flex flex-col w-full h-full lg:h-[32.603svh] ${
@@ -121,7 +121,7 @@ const ServiceCard = ({
             <h2 className="text-text_primary_light text-center text-xl">
               {handleServiceTitle()}
             </h2>
-            <p className="service-caption transition-transform text-text_primary_light text-center max-w-full p-3">
+            <p className="service-caption transition-transform text-text_primary_light text-sm lg:text-base text-center max-w-full p-3">
               {description}
             </p>
             {video && (

@@ -40,7 +40,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <ReusableButton btnText={"Book a trip now"} />
+        {/* <ReusableButton btnText={"Book a trip now"} /> */}
       </section>
       <UpcomingEvents />
       <RatingsSection />
