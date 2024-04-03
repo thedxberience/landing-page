@@ -35,7 +35,7 @@ const CTAProfiles = ({
   };
   return (
     <Skeleton
-      startColor="#FFE3C2"
+      startColor="#927E68"
       endColor="#4d4843"
       isLoaded={imageLoaded}
       width={["200px", "350px"]}

@@ -6,7 +6,6 @@ import { useStore, useAPIStore } from "../store/store";
 import Carousel from "./Carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { useQuery } from "react-query";
-import { Skeleton } from "@chakra-ui/react";
 
 const CTAForm = () => {
   const { serviceType, activityList } = useStore((state) => state);

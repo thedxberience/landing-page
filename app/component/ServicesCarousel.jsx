@@ -50,18 +50,24 @@ const ServicesCarousel = ({ carouselList }) => {
         </Carousel>
 
         {/* <ServiceCard background="/service-4.jpg" /> */}
-        <div className="carousel-btns flex justify-between items-center w-[90svw] absolute top-1/2 transform -translate-y-1/2">
+        {/* <div className="carousel-btns flex justify-between items-center w-[90svw] absolute top-1/2 transform -translate-y-1/2"> */}
+        <div className="carousel-btns flex justify-between items-center absolute top-1/2 transform left-5 ">
           <CarouselButtons
             onClick={onPrevButtonClick}
             disabled={prevBtnDisabled}
             direction="prev"
           />
+        </div>
+
+        <div className="carousel-btns flex justify-between items-center absolute top-1/2 transform right-5 ">
           <CarouselButtons
             onClick={onNextButtonClick}
             disabled={nextBtnDisabled}
             direction="next"
           />
         </div>
+
+        {/* </div> */}
       </div>
       <div className="submit_button mt-6">
         {interestedActivities.length > 0 && (
