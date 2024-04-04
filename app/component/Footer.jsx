@@ -17,8 +17,8 @@ const Footer = () => {
         <div className="flex flex-col w-6/12 gap-5 justify-center items-center">
           <h1 className="font-medium text-text_primary_light">CALL US</h1>
           <p className="text-text_primary_light text-lg  lg:text-4xl font-medium">
-            <a href="tel:+971 4 123 4567" target="_blank">
-              +971 4 123 4567
+            <a href="tel:+971585023479" target="_blank">
+              +971585023479
             </a>
           </p>
         </div>
@@ -26,8 +26,8 @@ const Footer = () => {
         <div className="flex flex-col w-6/12 gap-5 justify-center items-center">
           <h1 className="font-medium text-text_primary_light">EMAIL US</h1>
           <p className="text-text_primary_light text-lg lg:text-4xl font-medium">
-            <a href="mailto:dxberience@email.com" target="_blank">
-              dxberience@email.com
+            <a href="mailto:contact@thedxberience.com" target="_blank">
+              Contact@thedxberience.com
             </a>
           </p>
         </div>

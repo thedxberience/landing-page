@@ -61,7 +61,7 @@ const UpcomingEvents = () => {
       </div> */}
       <div className="flex h-60 justify-center items-center">
         <h2 className="text-xl lg:text-4xl">
-          No upcoming events, check back later
+          No upcoming events, please check back later
         </h2>
       </div>
     </section>

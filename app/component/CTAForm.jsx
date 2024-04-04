@@ -41,7 +41,9 @@ const CTAForm = () => {
         </div>
 
         {activityList.length > 0 && (
-          <ServicesCarousel carouselList={activityList} />
+          <>
+            <ServicesCarousel carouselList={activityList} />
+          </>
         )}
       </div>
     </div>

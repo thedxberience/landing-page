@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import Footer from "./component/Footer";
 import UpcomingEvents from "./component/UpcomingEvents";
 import RatingsSection from "./component/RatingsSection";
+import VideoSection from "./component/VideoSection";
 
 export default function Home() {
   // redirect("/coming_soon", "replace");
@@ -17,31 +18,7 @@ export default function Home() {
           <CTAForm />
         </div>
       </section>
-      <section className="video-section py-[46px] flex flex-col gap-7 justify-center items-center">
-        <div className="section-header">
-          <h1 className="text-xl lg:text-5xl font-bold text-text_primary">
-            Awaken to a different World
-          </h1>
-        </div>
-        <div className="video-container w-[83.012vw] h-[260px] lg:h-[79.252vh] relative">
-          <Image
-            src="/videoThumbnail.png"
-            alt="video thumbnail"
-            fill
-            className="object-cover"
-          />
-          <div className="video-play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <Image
-              src="/playButton.svg"
-              alt="play button"
-              width={176.79}
-              height={176.79}
-              className="w-16 h-16 lg:w-[176.79px] lg:h-[176.79px]"
-            />
-          </div>
-        </div>
-        {/* <ReusableButton btnText={"Book a trip now"} /> */}
-      </section>
+      <VideoSection />
       <UpcomingEvents />
       <RatingsSection />
       <Footer />

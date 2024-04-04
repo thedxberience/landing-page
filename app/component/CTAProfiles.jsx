@@ -48,7 +48,7 @@ const CTAProfiles = ({
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-        className={`"CTACard flex flex-col gap-3 p-4 lg:p-8 text-white justify-end relative items-start w-full h-[204px] lg:h-[50.239svh] hover:border hover:border-white hover:shadow-lg transition-all duration-100 ease-in cursor-pointer" ${
+        className={`"CTACard rounded-lg flex flex-col gap-3 p-4 lg:p-8 text-white justify-end relative items-start w-full h-[204px] lg:h-[406px] hover:border hover:border-white hover:shadow-lg transition-all duration-100 ease-in cursor-pointer" ${
           serviceType == name ? "border border-white shadow-lg" : ""
         }`}
       >
@@ -59,13 +59,13 @@ const CTAProfiles = ({
           height={486}
           loading="lazy"
           onLoad={() => setImageLoaded(true)}
-          className="object-cover w-full h-[204px] lg:h-[50.239svh] absolute top-0 left-0"
+          className="object-cover rounded-lg w-full h-[204px] lg:h-[406px] absolute top-0 left-0"
         />
         <div
           style={{
             backgroundImage: `linear-gradient(180deg, rgba(200, 200, 200, 0.1), rgba(0, 0, 0, 0.9))`,
           }}
-          className="w-full h-[204px] lg:h-[50.239svh] absolute top-0 left-0 z-10"
+          className="w-full h-[204px] lg:h-[406px] absolute top-0 left-0 z-10"
         ></div>
         <div className="profile-details z-50 flex flex-col items-start gap-2 w-full">
           <div className="flex justify-between items-center w-full">
