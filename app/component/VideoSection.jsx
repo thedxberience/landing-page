@@ -24,7 +24,7 @@ const VideoSection = () => {
           onClose={() => setIsOpen(false)}
         />
         <Image
-          src="/videoThumbnail.png"
+          src="/video_background_image.jpg"
           alt="video thumbnail"
           fill
           className="object-cover"

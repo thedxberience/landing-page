@@ -84,12 +84,20 @@ body {
   }
 }
 
+#videoBg{
+  /* position: absolute; */
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .service-video video{
   max-height: 400px;
 }
 
 .hero-section {
-  /* background: url("/hero_gif.gif") no-repeat center center/cover; */
+  background: url("/video_bgg.gif") no-repeat center center/cover;
   background-color: #4d4843;
 }
 

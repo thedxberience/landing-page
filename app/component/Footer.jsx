@@ -18,7 +18,7 @@ const Footer = () => {
           <h1 className="font-medium text-text_primary_light">CALL US</h1>
           <p className="text-text_primary_light text-lg  lg:text-4xl font-medium">
             <a href="tel:+971585023479" target="_blank">
-              +971585023479
+              +971 58 502 3479
             </a>
           </p>
         </div>
@@ -33,41 +33,55 @@ const Footer = () => {
         </div>
       </div>
       <div className="social-media flex justify-center items-center gap-4">
-        <Image
-          src="/facebook.svg"
-          alt="facebook"
-          width={24}
-          height={24}
-          className="cursor-pointer"
-        />
-        <Image
-          src="/instagram.svg"
-          alt="instagram"
-          width={24}
-          height={24}
-          className="cursor-pointer"
-        />
-        <Image
-          src="/youtube.svg"
-          alt="twitter"
-          width={24}
-          height={24}
-          className="cursor-pointer"
-        />
-        <Image
-          src="/twitter.svg"
-          alt="twitter"
-          width={24}
-          height={24}
-          className="cursor-pointer"
-        />
-        <Image
-          src="/linkedin.svg"
-          alt="twitter"
-          width={24}
-          height={24}
-          className="cursor-pointer"
-        />
+        {/* <a href="">
+          <Image
+            src="/facebook.svg"
+            alt="facebook"
+            width={24}
+            height={24}
+            className="cursor-pointer"
+          />
+        </a> */}
+        <a
+          href="https://www.instagram.com/thedxberience?igsh=MzRlODBiNWFlZA=="
+          target="_blank"
+        >
+          <Image
+            src="/instagram.svg"
+            alt="instagram"
+            width={24}
+            height={24}
+            className="cursor-pointer"
+          />
+        </a>
+        {/* <a href="">
+          <Image
+            src="/youtube.svg"
+            alt="twitter"
+            width={24}
+            height={24}
+            className="cursor-pointer"
+          />
+        </a> */}
+        {/* <a href="">
+          <Image
+            src="/twitter.svg"
+            alt="twitter"
+            width={24}
+            height={24}
+            className="cursor-pointer"
+          />
+        </a> */}
+
+        <a href="https://www.linkedin.com/company/thedxberience/">
+          <Image
+            src="/linkedin.svg"
+            alt="twitter"
+            width={24}
+            height={24}
+            className="cursor-pointer"
+          />
+        </a>
       </div>
       <div className="footer-bottom w-full flex justify-center items-center gap-8 pb-8">
         <p className="text-text_primary_light font-poppins text-base font-normal">

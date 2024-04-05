@@ -12,8 +12,11 @@ export default function Home() {
   // redirect("/coming_soon", "replace");
   return (
     <main className="flex min-h-screen max-w-full flex-col items-center justify-between">
-      <section className="hero-section w-full lg:min-h-screen h-fit">
+      <section className="hero-section relative w-full lg:min-h-screen h-fit">
         <Navbar />
+        {/* <video muted autoPlay playsInline loop id="videoBg">
+          <source src="/video_bg.mp4" type="video/mp4" />
+        </video> */}
         <div className="flex mt-2 flex-col items-center justify-center gap-8">
           <CTAForm />
         </div>
