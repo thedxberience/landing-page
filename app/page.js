@@ -9,7 +9,7 @@ import RatingsSection from "./component/RatingsSection";
 import VideoSection from "./component/VideoSection";
 
 export default function Home() {
-  // redirect("/coming_soon", "replace");
+  redirect("/coming_soon", "replace");
   return (
     <main className="flex min-h-screen max-w-full flex-col items-center justify-between">
       <section className="hero-section relative w-full lg:min-h-screen h-fit">
