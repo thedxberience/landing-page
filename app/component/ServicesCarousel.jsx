@@ -28,6 +28,9 @@ const ServicesCarousel = ({ carouselList }) => {
 
   return (
     <section className="services flex flex-col justify-center items-center mt-24 w-full">
+      <h1 className="text-xl text-white">
+        Please select your preferred activities
+      </h1>
       <div
         className={`${
           carouselList.length == 1 && "single"

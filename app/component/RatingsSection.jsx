@@ -19,15 +19,15 @@ const RatingsSection = () => {
   const ratings = [
     {
       star: 5,
-      ratingAuthor: "Craylin",
+      ratingAuthor: "- Michael R.",
       ratingDescription:
-        " I had an amazing experience travelling with the team at DXberience. The flight was on point and the location was absolutely beautiful",
+        "I've traveled the world, but my recent experience with Dxberience in Dubai was unparalleled. They curated a personalized itinerary that showcased the city's hidden gems, all with a touch of luxury. Can't wait to book my next adventure with them!",
     },
     {
-      star: 4,
-      ratingAuthor: "Emma",
+      star: 5,
+      ratingAuthor: " - Jessica L.",
       ratingDescription:
-        " I had an amazing experience travelling with the team at DXberience. The flight was on point and the location was absolutely beautiful",
+        "Exceeded our wildest expectations! From securing exclusive dining reservations to arranging a private yacht experience, every detail was flawless. Our trip to Dubai was truly unforgettable, all thanks to the impeccable service of Dxberience, Highly recommended!",
     },
   ];
 

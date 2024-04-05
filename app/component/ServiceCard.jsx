@@ -152,6 +152,7 @@ const ServiceCard = ({
             controls={true}
             muted={true}
             playing={true}
+            playsinline={true}
           />
         </div>
       </CustomModal>
