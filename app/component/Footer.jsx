@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="contact-details flex justify-evenly border-white border-y py-4 lg:py-6 items-center w-full">
         <div className="flex flex-col w-6/12 gap-5 justify-center items-center">
           <h1 className="font-medium text-text_primary_light">CALL US</h1>
-          <p className="text-text_primary_light text-lg  lg:text-4xl font-medium">
+          <p className="text-text_primary_light text-sm md:text-base  lg:text-4xl font-medium">
             <a href="tel:+971585023479" target="_blank">
               +971 58 502 3479
             </a>
@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="h-[100.01px] w-0 border border-white lg:rotate-0"></div>
         <div className="flex flex-col w-6/12 gap-5 justify-center items-center">
           <h1 className="font-medium text-text_primary_light">EMAIL US</h1>
-          <p className="text-text_primary_light text-lg lg:text-4xl font-medium">
+          <p className="text-text_primary_light text-sm md:text-base lg:text-4xl font-medium">
             <a href="mailto:contact@thedxberience.com" target="_blank">
               Contact@thedxberience.com
             </a>
