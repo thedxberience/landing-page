@@ -3,10 +3,10 @@ import React from "react";
 import ReusableButton from "./ReusableButton";
 import BrandLogo from "./BrandLogo";
 const Navbar = ({ logoColor = "light" }) => {
-  const filled = false;
+  const filled = true;
   return (
     <>
-      <nav className="flex justify-center items-center py-6 px-2 lg:px-20 w-full font-poppins">
+      <nav className="flex justify-between items-center py-6 px-2 lg:px-20 w-full font-poppins">
         <BrandLogo logoType={logoColor} />
         {/* <div className="flex items-center space-x-4">
           <ul className="flex justify-center items-center gap-8">
@@ -20,7 +20,7 @@ const Navbar = ({ logoColor = "light" }) => {
           </ul>
         </div> */}
         {/* <ReusableButton btnText={"Contact Us"} /> */}
-        {/* <a
+        <a
           href="https://api.whatsapp.com/send/?phone=%2B971585023479&text=Hello+there%2C+I+am+interested+in+a+luxury+concierge+service+in+Dubai&type=phone_number&app_absent=0"
           target="_blank"
         >
@@ -42,7 +42,7 @@ const Navbar = ({ logoColor = "light" }) => {
               />
             </span>
           </button>
-        </a> */}
+        </a>
       </nav>
       {/* <nav className="flex lg:hidden flex-col justify-between items-center py-6 px-20 w-full font-poppins">
         <div className="flex w-full justify-between items-center">
