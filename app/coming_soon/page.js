@@ -51,10 +51,10 @@ const ComingSoon = () => {
   return (
     <main className="coming_soon flex min-h-screen max-w-full flex-col items-center justify-between">
       <div className="w-[90vw] flex flex-col justify-between items-center h-[90svh] lg:h-[70svh]">
-        <Navbar />
+        <Navbar logoColor="dark" />
         <h2 className="text-3xl lg:text-5xl w-[80vw] text-center">
-          This site is under construction. Please check back in:
-          <Countdown />
+          This site is under construction. Please check back soon!
+          {/* <Countdown /> */}
         </h2>
         <form onSubmit={handleSubmit(handleSubmitForm)}>
           <h3 className="text-2xl lg:text-3xl w-full mb-5 text-center">
